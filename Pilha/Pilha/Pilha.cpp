@@ -59,7 +59,7 @@ void menu()
 void inicializar()
 {
 
-	// se a lista j� possuir elementos
+	// se a lista já possuir elementos
 	// libera a memoria ocupada
 	NO* aux = topo;
 	while (aux != NULL) {
@@ -86,12 +86,32 @@ void push()
 	cout << "Digite o elemento: ";
 	cin >> novo->valor;
 	novo->prox = NULL;
-
-
+	novo->prox = topo;
+	topo = novo;
 }
 
 void pop()
 {
+	NO* temp = topo;
+	cout << "Pilha: [";
+	while (temp != NULL) {
+		cout << temp->valor << " ";
+		temp = temp->prox;
+	}
+	cout << " ]\n";
+	temp = topo;
+	topo->valor;
+	if (topo != NULL){
+		cout << " O valor do ultimo elemento é: " << topo->valor << endl;
+		topo = topo->prox;
+		delete temp;
+		cout << "O elemento vai ser deletado \n";
+	}
+	else {
+	cout << " Não existe mais nenhum elemento \n";
+	cout << " A lista está vazia \n ";
+	return;
+}
 
 	
 
